@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.coffeeapp.databinding.FragmentWelcomeBinding
@@ -23,8 +22,6 @@ class WelcomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireActivity(), R.color.black)
-        requireActivity().window.navigationBarColor = ContextCompat.getColor(requireActivity(), R.color.black)
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentWelcomeBinding.bind(view)
         binding.getStartedButton.setOnClickListener {
