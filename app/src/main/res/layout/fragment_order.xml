@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    tools:context=".OrderFragment">
+
+    <LinearLayout
+        android:id="@+id/topBarOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="back button"
+            android:src="@drawable/baseline_arrow_back_ios_24" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sora"
+            android:gravity="center"
+            android:text="Order"
+            android:textColor="#2F2D2C"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="back button"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:visibility="invisible"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/order_types_selector"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/toggle_group_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarOrder">
+
+        <Button
+            android:id="@+id/button_deliver"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="#C57B4E"
+            android:fontFamily="@font/sora"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Deliver"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/button_pickup"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:backgroundTint="#F0F0F0"
+            android:fontFamily="@font/sora"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Pick Up"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/deliver_address_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sora"
+        android:text="Deliver Address"
+        android:textColor="#242424"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/order_types_selector"
+        app:layout_constraintTop_toBottomOf="@id/order_types_selector" />
+
+    <TextView
+        android:id="@+id/address_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/sora"
+        android:text="Jl. Kpg Sutoyo"
+        android:textColor="#242424"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/order_types_selector"
+        app:layout_constraintTop_toBottomOf="@id/deliver_address_textview" />
+
+    <TextView
+        android:id="@+id/full_address_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/sora"
+        android:text="Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai."
+        android:textColor="#72000000"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/order_types_selector"
+        app:layout_constraintTop_toBottomOf="@id/address_textview" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/edit_address_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sora"
+        android:text="Edit Address"
+        android:textAllCaps="false"
+        android:textColor="#313131"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_edit"
+        app:iconTint="#313131"
+        app:layout_constraintStart_toStartOf="@+id/full_address_textview"
+        app:layout_constraintTop_toBottomOf="@+id/full_address_textview"
+        app:strokeColor="#A2A2A2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_note_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/sora"
+        android:text="Add Note"
+        android:textAllCaps="false"
+        android:textColor="#313131"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_document"
+        app:iconTint="#313131"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_address_button"
+        app:layout_constraintStart_toEndOf="@+id/edit_address_button"
+        app:layout_constraintTop_toTopOf="@+id/edit_address_button"
+        app:strokeColor="#A2A2A2" />
+
+    <View
+        android:id="@+id/divider_order"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:background="#E3E3E3"
+        app:layout_constraintEnd_toEndOf="@+id/order_types_selector"
+        app:layout_constraintStart_toStartOf="@+id/order_types_selector"
+        app:layout_constraintTop_toBottomOf="@id/add_note_button" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image_preview"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/page_2_coffeepng"
+        app:layout_constraintStart_toStartOf="@id/order_types_selector"
+        app:layout_constraintTop_toBottomOf="@id/divider_order"
+        app:shapeAppearanceOverlay="@style/RoundedOrderImageView" />
+
+    <TextView
+        android:id="@+id/coffee_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/sora"
+        android:text="Caffe Mocha"
+        android:textColor="#242424"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/image_preview"
+        app:layout_constraintTop_toTopOf="@id/image_preview" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sora"
+        android:text="Deep Foam"
+        android:textColor="#A2A2A2"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/image_preview"
+        app:layout_constraintTop_toBottomOf="@id/coffee_name" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_plus"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:padding="0dp"
+        android:text="+"
+        android:textColor="@color/black"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_preview"
+        app:layout_constraintEnd_toEndOf="@+id/order_types_selector"
+        app:layout_constraintTop_toTopOf="@+id/image_preview"
+        app:strokeColor="#F9F2ED" />
+
+    <TextView
+        android:id="@+id/quantity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/sora"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/button_plus"
+        app:layout_constraintEnd_toStartOf="@+id/button_plus"
+        app:layout_constraintTop_toTopOf="@+id/button_plus" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_minus"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/white"
+        android:padding="0dp"
+        android:text="-"
+        android:textColor="@color/black"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_preview"
+        app:layout_constraintEnd_toStartOf="@+id/quantity_text"
+        app:layout_constraintTop_toTopOf="@+id/image_preview"
+        app:strokeColor="#F9F2ED" />
+
+    <View
+        android:id="@+id/divider_order_2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#F9F2ED"
+        app:layout_constraintEnd_toEndOf="@+id/order_types_selector"
+        app:layout_constraintStart_toStartOf="@+id/order_types_selector"
+        app:layout_constraintTop_toBottomOf="@id/image_preview" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/discount_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="@id/order_types_selector"
+        app:layout_constraintStart_toStartOf="@id/order_types_selector"
+        app:layout_constraintTop_toBottomOf="@id/divider_order_2"
+        app:strokeColor="#EAEAEA"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/discount_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Discount"
+                android:src="@drawable/ic_discount"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/sora"
+                android:text="1 Discount is Applied"
+                android:textColor="#313131"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/discount_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.666" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Go to discounts"
+                android:rotation="180"
+                android:src="@drawable/baseline_arrow_back_ios_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#2F2D2C" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/payment_summary_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/sora"
+        android:text="Payment Summary"
+        android:textColor="#313131"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/discount_card"
+        app:layout_constraintTop_toBottomOf="@+id/discount_card" />
+
+    <TextView
+        android:id="@+id/price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/sora"
+        android:text="Price"
+        android:textColor="#313131"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/payment_summary_title"
+        app:layout_constraintTop_toBottomOf="@+id/payment_summary_title" />
+
+    <TextView
+        android:id="@+id/price_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sora"
+        android:text="$ 4.53"
+        android:textColor="#313131"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/price_label"
+        app:layout_constraintEnd_toEndOf="@+id/discount_card" />
+
+    <TextView
+        android:id="@+id/delivery_fee_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/sora"
+        android:text="Delivery Fee"
+        android:textColor="#313131"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/price_label"
+        app:layout_constraintTop_toBottomOf="@+id/price_label" />
+
+    <TextView
+        android:id="@+id/delivery_fee_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sora"
+        android:text="$ 1.0"
+        android:textColor="#313131"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/delivery_fee_label"
+        app:layout_constraintEnd_toEndOf="@+id/price_value" />
+
+    <TextView
+        android:id="@+id/delivery_fee_strikethrough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/sora"
+        android:text="$ 2.0"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/delivery_fee_value"
+        app:layout_constraintEnd_toStartOf="@+id/delivery_fee_value" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_bar_background"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/wallet_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_wallet"
+            app:layout_constraintBottom_toTopOf="@id/total_price_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payment_method_text"
+            app:tint="#C67C4E" />
+
+        <TextView
+            android:id="@+id/payment_method_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/sora"
+            android:text="Cash/Wallet"
+            android:textColor="#303336"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/total_price_text"
+            app:layout_constraintStart_toEndOf="@+id/wallet_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/total_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sora"
+            android:text="$ 5.53"
+            android:textColor="#C67C4E"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/order_button"
+            app:layout_constraintStart_toStartOf="@+id/payment_method_text"
+            app:layout_constraintTop_toBottomOf="@+id/payment_method_text" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="down arrow"
+            android:rotation="270"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            app:layout_constraintBottom_toBottomOf="@+id/payment_method_text"
+            app:layout_constraintEnd_toEndOf="@id/order_button"
+            app:layout_constraintTop_toTopOf="@+id/payment_method_text" />
+
+        <Button
+            android:id="@+id/order_button"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/sora"
+            android:text="Order"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:backgroundTint="#C67C4E"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
