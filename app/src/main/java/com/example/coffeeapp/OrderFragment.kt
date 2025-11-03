@@ -37,9 +37,9 @@ class OrderFragment : Fragment() {
                 quantityTextView.text = currentQuantityInt.toString()
 
                 var currentPrice = coffeePrice * currentQuantityInt
-                priceValueTextView.text = currentPrice.toString()
+                priceValueTextView.text = "$ ${currentPrice.toString()}"
                 totalPrice = currentPrice + deliveryFee
-                totalPriceTextView.text = totalPrice.toString()
+                totalPriceTextView.text = "$ ${totalPrice.toString()}"
             }
         }
 
@@ -49,9 +49,9 @@ class OrderFragment : Fragment() {
                 quantityTextView.text = currentQuantityInt.toString()
 
                 var currentPrice = coffeePrice * currentQuantityInt
-                priceValueTextView.text = currentPrice.toString()
+                priceValueTextView.text = "$ ${currentPrice.toString()}"
                 totalPrice = currentPrice + deliveryFee
-                totalPriceTextView.text = totalPrice.toString()
+                totalPriceTextView.text = "$ ${totalPrice.toString()}"
 
             }
         }
